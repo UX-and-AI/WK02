@@ -12,13 +12,13 @@ function preload() {
   mCamera = createCapture(VIDEO, { flipped: true });
   mCamera.hide();
 
-  mModel = ml5.faceMesh();
-  // mModel = ml5.handPose();
+  //mModel = ml5.faceMesh();
+   mModel = ml5.handPose();
 }
 
 // when some "thing" is detected, just copy it to mDetected
 function updateDetected(detected) {
-  mDetected = detected;
+  mDetected = detected; //different variable because so that I can access this later in the draw function 
   mModel.detect(mCamera, updateDetected);
 }
 
